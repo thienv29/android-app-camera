@@ -65,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
                    username = usernameTx.getText().toString();
                    password = passwordTx.getText().toString();
                    Toast.makeText(MainActivity.this, "Đăng nhập thành công", Toast.LENGTH_LONG).show();
-
+                    usernameTx.setText("");
+                    passwordTx.setText("");
                 }
             }
         });
