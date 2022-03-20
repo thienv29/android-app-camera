@@ -5,10 +5,48 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/username"
+            android:id="@+id/username"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:id="@+id/password"
+            />
+
+        <Button
+            android:id="@+id/sign_in_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="#555555"
+            android:paddingBottom="0dp"
+            android:text="@string/ng_nh_p"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/bottomButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#555555"
+            android:paddingBottom="0dp"
+            android:text="@string/take_a_photo"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
     <GridView
         android:id="@+id/grid_view"
         android:layout_width="match_parent"
-        android:layout_height="679dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:columnWidth="90dp"
         android:gravity="center"
@@ -19,21 +57,5 @@
 
     </GridView>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/bottomButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="54dp"
-            android:background="#555555"
-            android:paddingBottom="0dp"
-
-            android:text="take a photo"
-            android:textColor="#ffffff" />
-    </RelativeLayout>
 
 </LinearLayout>
