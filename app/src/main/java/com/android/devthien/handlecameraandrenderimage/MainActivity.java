@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -20,6 +21,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.devthien.handlecameraandrenderimage.Activities.Hello;
 import com.android.devthien.handlecameraandrenderimage.Constant.LocalAccount;
 import com.android.devthien.handlecameraandrenderimage.GridViewImage.GridViewImage;
 
@@ -57,8 +59,11 @@ public class MainActivity extends AppCompatActivity {
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if (!usernameTx.getText().toString().equals(LocalAccount.LOCAL_USERNAME) || !passwordTx.getText().toString().equals(LocalAccount.LOCAL_PASSWORD) ){
                     Toast.makeText(MainActivity.this, "Tài khoản hoặc mật khẩu sai", Toast.LENGTH_LONG).show();
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
+                    startActivity(browserIntent);
                     return;
                 }
                 if (usernameTx.getText().toString().equals(LocalAccount.LOCAL_USERNAME) && passwordTx.getText().toString().equals(LocalAccount.LOCAL_PASSWORD) ){
@@ -68,6 +73,10 @@ public class MainActivity extends AppCompatActivity {
                     usernameTx.setText("");
                     passwordTx.setText("");
                 }
+                Intent i = new Intent(getApplicationContext(), Hello.class);
+                i.putExtra("username",username);
+                i.putExtra("password",password);
+                startActivity(i);
             }
         });
 
