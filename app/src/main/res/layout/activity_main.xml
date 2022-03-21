@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/password"
             android:id="@+id/password"
+            android:inputType="textPassword"
             />
 
         <Button
